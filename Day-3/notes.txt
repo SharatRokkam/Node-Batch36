@@ -1,0 +1,10 @@
+STATUS CODE: we are talking about the response status codes. These codes tell us whether an HTTP request has been successfully completed. Let us take a look at the five classes of the codes –
+
+Informational Responses: Codes 100 to 199
+Successful Responses: Codes 200 to 299
+Redirection Messages: Codes 300 to 399
+Client Error Responses: Codes 400 to 499
+Server Error Responses: Codes 500 to 599
+
+
+GET, POST, PUT, PATCH AND DELETE
