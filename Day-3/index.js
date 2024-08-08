@@ -24,8 +24,9 @@ const server = http.createServer((req, res) => {
       let modifiedIndex = index
         .replace("**title**", product.title)
         .replace("**description**", product.description)
-        .replace("")
+        .replace("");
       res.end(modifiedIndex);
+      break;
 
     default:
       res.writeHead(404, "NOT FOUND");

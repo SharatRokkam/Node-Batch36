@@ -1,0 +1,10 @@
+Express is a minimal and flexible node.js web framework, that allows you to create and build SPA, MPA and hybrid applications.
+
+Express Features:
+1. Routing
+2. Middleware 
+3. Template Engine (EJS) - Dynamically render HTML
+4. Error Handling
+
+
+Middleware : 
