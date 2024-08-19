@@ -1,0 +1,44 @@
+What is a Database? - "Store"
+
+A database is an organized collection of data that is stored and accessed electronically. Databases are used to manage, retrieve, and manipulate data efficiently. They can store anything from simple information like names and addresses to complex data like entire websites or applications.
+
+
+Types of Databases?
+
+1. Relational Databases: (sql) -->>structured query language
+
+Structure: Data is organized into tables (rows and columns).
+Examples: MySQL, PostgreSQL, Oracle.
+
+2. Non-Relational (NoSQL) Databases:
+
+Structure: Data is stored in a flexible format (e.g., documents, key-value pairs, graphs).
+Examples: MongoDB, Cassandra, Redis.
+
+
+What is MongoDB?
+MongoDB is a popular NoSQL database known for its document-oriented storage. It stores data in a flexible, JSON-like format, allowing for more dynamic and unstructured data.
+
+Features of MongoDB
+Document-Oriented: Stores data in JSON-like documents, making it more natural and flexible.
+Scalable: Easily scales horizontally with sharding.
+High Availability: Supports replication for data redundancy and high availability.
+Indexing: Provides rich query capabilities with support for various types of indexes.
+Aggregation: Allows for complex data processing and transformation.
+
+MongoDB Compass - GUI  - Application
+MongoDB Atlas - Cloud Storage - cluster(expenseTracker)
+Mongo shell - command line
+db.create();
+
+db.collection{
+    findanddelete : 3
+}
+
+
+
+
+findOne
+find
+findanddelete
+findandupdate
