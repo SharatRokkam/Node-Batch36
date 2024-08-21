@@ -2,32 +2,29 @@ import express from "express";
 const app = express();
 import { PORT, mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
-import { Book } from "./models/bookModel.js";
+import bookRoute from "./routes/bookRoute.js";
+import cors from "cors";
 
-//bodyParser
+//Middleware for parsing request body
 app.use(express.json());
 
-app.post("/books", async (req, res) => {
-  try {
-    if (!req.body.title || !req.body.author || !req.body.publishYear) {
-      return res.status(400).send({ message: "send all the required fields" });
-    }
-    const newBook = {
-      title: req.body.title,
-      author: req.body.author,
-      publishYear: req.body.publishYear,
-    };
+//Middleware for all the api
+app.use("/books", bookRoute);
 
-    const book = await Book.create(newBook);
-    return res.status(201).send(book);
-  } catch (error) {
-    console.log(error.message);
-    res.status(500).send({ message: error.message });
-  }
-});
+//cors
+// 1st way
+// app.use(cors());
 
+// 2nd way
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeader: ["Content-Type"],
+  })
+);
 
-
+//database connection
 mongoose
   .connect(mongoDBURL)
   .then(() => {
