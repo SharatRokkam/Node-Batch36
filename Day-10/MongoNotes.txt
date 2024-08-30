@@ -1,0 +1,143 @@
+Database ?
+---------------------------------------------
+Databases are used to store information, organize it, and ensure that it can be easily accessed and manipulated when needed. Databases are fundamental to applications, websites, and software systems where data storage and retrieval are essential.
+
+
+Types of Database??
+Relational and Non-Relational 
+-----------------------------------------------
+Relational Database (RDB):
+A relational database (RDB) organizes data into tables (also known as relations), which consist of rows and columns. Each row represents a record, and each column represents a field within that record. The key feature of relational databases is the ability to establish relationships between tables using foreign keys. This allows for efficient querying and ensures data integrity. Structured Query Language (SQL) is commonly used to interact with relational databases.
+
+Examples of Relational Databases:
+--------------------------------
+MySQL (sequel)
+PostgreSQL
+Oracle Database
+
+Non-Relational Database (NRDB):
+Non-relational databases, also known as NoSQL databases, store data in a format other than tables. They are designed to handle large volumes of unstructured or semi-structured data, and they offer flexibility in how data is stored and retrieved. There are various types of non-relational databases, including document stores, key-value stores, wide-column stores, and graph databases. NoSQL databases are often used in scenarios where scalability, speed, and flexibility are crucial.
+
+Why you chose MongoDB?? 
+
+Non - Relational - large volume ->> scalability, speed and flexibility..
+
+
+Examples of Non-Relational Databases:
+------------------------------------
+MongoDB (Document store)
+Redis (Key-value store)
+Cassandra (Wide-column store)
+
+
+--------------------------------------------------******************--------------------------------------------
+
+What is MongoDB?
+
+MongoDB is a NoSQL database that stores data in flexible, JSON-like documents, making it ideal for handling unstructured data. Unlike traditional relational databases, MongoDB doesn't use tables and rows. Instead, it stores data in collections and documents, providing more flexibility and scalability.
+
+latest_db - Database
+
+students - collection
+teachers - collection
+laptop - collection
+
+
+Documents
+{
+    name : "John"
+    age: 13
+}
+{
+    name: "Mary"
+    age: 12
+}
+{
+    name : "Rose",
+    age : 21,
+    hasCards : {hasPancard: true}
+}
+
+
+Features of MongoDB
+->Flexible Schema
+Allows for the storage of diverse data structures within the same collection.
+->Scalability
+Supports horizontal scaling by distributing data across multiple servers.
+->High Performance
+Optimized for read and write operations, making it ideal for applications that need fast data access.
+->Rich Query Language
+Offers a powerful, expressive query language that supports filtering, aggregation, and map-reduce operations.
+->Automatic Failover
+Provides high availability through replica sets, where data is replicated across multiple servers.
+
+-------------------------------****************************************-----------------------------
+
+What is JSON?
+
+JSON is a lightweight data-interchange format that is easy to read and write. It is used to store and transmit data objects consisting of attribute–value pairs. In MongoDB, documents are stored in a BSON (Binary JSON) format.
+
+
+Collection, Document, Field, Query
+
+1. Collection
+
+A collection is a group of MongoDB documents, similar to a table in an SQL database.
+
+2.Document
+
+A document is a single record in a MongoDB collection, similar to a row in an SQL table. It contains data in a key-value pair format.
+
+3. Field
+
+A field is a key in a document that holds a value, similar to a column in an SQL table.
+
+4. Query
+A query is a request to retrieve data from the database, often using filters to find specific documents.
+
+
+git - git add, git command
+
+database - Query
+show dbs
+use students
+
+
+
+Schema Less -->
+
+SQL  - Relational Database
+
+Name Age isStudent
+---   --   true
+---   --   false
+---  ---   true   true
+
+
+MongoDB - SchemaLess 
+
+students - Collection (Not Advisable)
+
+MongoDB - maintain schema of your own!!!
+
+{
+    name : "something"
+    age: 23
+}
+{
+    name : "student2"
+    age : 21
+    isDisabled: true
+}
+
+{
+  teacher : "ME"
+  age : 2342
+  hasPancard: true
+  role : "Trainer"   
+}
+
+{
+    laptopName : "DELL"
+    RAM: "2gbram"
+}

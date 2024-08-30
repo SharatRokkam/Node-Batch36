@@ -1,0 +1,51 @@
+Aggregation Pipeline :
+
+The Aggregation process in mongodb consist of several stages, each stage transformin the data in some way.
+
+The output of one stage is fed as the input to the next stage, and so on. until the final stge produces the desired results.
+
+
+mongodb provides several built in Aggregation Pipeline stages to perform various operation on the data such as $group, $sum, $avg $min, $max etc.....
+
+
+db.teachers.aggregate()
+
+db.collection.aggregate(pipeline, options)
+
+db.collection.aggregate(pipeline, options)
+
+db.teachers.aggregate([{$match : {gender : "Male"}}])
+
+Group teachers by age:
+db.teachers.aggregate([{$group : {_id: "$age"}}])
+
+$group : {_id : expression, field1: expresssion, field2: expression, ....}
+
+Group teachers by age and show all teachers names per age group
+
+db.teachers.aggregate([{$group : {_id : "$age", names: {$push : "$name"}}}])
+
+
+Group teachers by age and also show complete document per age group.
+
+db.teachers.aggregate([{$group : {_id : "$age" , wholeDoc : {$push : "$$ROOT"} }}])
+
+
+Give a count per age of male teacher
+
+db.teachers.aggregate([{$match : {gender : "male"}}, {$group : {_id: "$age", countOfTeachersinthisAgeGroup : {$sum : 1}}}])
+
+
+Give a count per age of male students and sort them by counting descending manner.
+
+db.teachers.aggregate([{$match : {gender : "male"}}, {$group : {_id: "$age", countOfTeachersinthisAgeGroup : {$sum : 1}}}, {$sort : {countofTEachersinthisAgeGroup : -1 }}])
+
+
+in students and find the hobbies per age group
+
+db.students.aggregate([{$group : {_id: "age", hobbies :{$push : "$Hobbies"}}}])
+
+
+
+
+
